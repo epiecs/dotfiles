@@ -19,7 +19,7 @@ alias ffs='sudo !!'
 alias activate='source .venv/bin/activate'
 alias newvenv='python3 -m venv .venv'
 
-alias tothelab="cd /mnt/c/Users/Gregory/Desktop/Projects"
+alias tothelab="cd /YOUR/DIR/HERE"
 alias syncnotes="git -C ${NOTESDIR} pull; git -C ${NOTESDIR} add .; git -C ${NOTESDIR} status; git -C ${NOTESDIR} commit -am 'sync'; git -C ${NOTESDIR} push"
 
 # quickly connect to lab device with lab <devname>
@@ -39,6 +39,8 @@ export PATH="$PATH:~/.local/bin"
 # disable ps1 change by python venv
 export ANSIBLE_NOCOWS=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # colors
 RESET="\[\017\]"
