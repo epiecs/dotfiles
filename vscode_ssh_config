@@ -1,0 +1,6 @@
+Host *
+  IdentityFile C:\\Users\\Gregory\\.ssh\\id_ed25519
+  User gregory
+
+Host 10.30.10.92
+  HostName 10.30.10.92
