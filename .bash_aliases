@@ -30,6 +30,11 @@ function lab() {
     telnet ${GNS3_SERVER} $PORT
 }
 
+function dockerbash() {
+    local shell="${2:-/bin/bash}"
+    docker exec -it $(docker ps | grep $1 | cut -c 1-4) $shell
+}
+
 alias rackpower="while true; do curl -sX GET http://10.30.180.21/status | jq .meters[0].power; sleep 1; done | pipeplot --min 50 --max 250 --direction right"
 
 ## env vars
