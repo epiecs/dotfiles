@@ -4,8 +4,6 @@ local act = wezterm.action
 local config = {}
 if wezterm.config_builder() then config = wezterm.config_builder() end
 
-local bash_path = "/opt/homebrew/bin/bash"
-
 -- WIN/Linux
 local mod_key = "ALT"
 
@@ -14,12 +12,11 @@ local mod_key = "CMD"
 
 -- Add folders to path
 config.set_environment_variables = {
-    PATH = '/usr/local/bin/:' .. os.getenv('PATH')
+    PATH = '/usr/local/bin/:/opt/homebrew/bin/:' .. os.getenv('PATH')
 }
 
 config = {
     automatically_reload_config = true,
-    default_prog = { bash_path },
     adjust_window_size_when_changing_font_size = false,
 
     scrollback_lines = 10000,
@@ -90,8 +87,8 @@ config.keys = {
     { key = "p",          mods = "SHIFT|"..mod_key,     action = act.ActivateCommandPalette },
   
     -- Pane keybindings
-    { key = "=",          mods = "SHIFT|"..mod_key,     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
-    { key = "-",          mods = "SHIFT|"..mod_key,     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+    { key = "-",          mods = "SHIFT|"..mod_key,     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+    { key = "=",          mods = "SHIFT|"..mod_key,     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
    
     { key = "w",          mods = mod_key,               action = act.CloseCurrentPane { confirm = true } },
     { key = "Enter",      mods = mod_key,               action = act.TogglePaneZoomState },
