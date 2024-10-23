@@ -99,10 +99,10 @@ config.keys = {
     { key = "UpArrow",    mods = mod_key,               action = act.ActivatePaneDirection("Up") },
     { key = "RightArrow", mods = mod_key,               action = act.ActivatePaneDirection("Right") },
     
-    { key = "LeftArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Left", 5 } },
-    { key = "DownArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Down", 5 } },
-    { key = "UpArrow",    mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Up", 5 } },
-    { key = "RightArrow", mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Right", 5 } },
+    { key = "LeftArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Left", 3 } },
+    { key = "DownArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Down", 3 } },
+    { key = "UpArrow",    mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Up", 3 } },
+    { key = "RightArrow", mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Right", 3 } },
     
     -- Tabs
     { key = "w",          mods = "SHIFT|"..mod_key,     action = act.CloseCurrentTab { confirm = true } },
