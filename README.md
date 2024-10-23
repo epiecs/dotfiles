@@ -29,6 +29,9 @@ A collection of my dotfiles
     ```
     # Amphetamine
     mas install 937984704
+
+    # Wireguard
+    mas install 1451685025
     ```
 
 - Use `stow` to setup all needed dotfiles
