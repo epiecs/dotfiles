@@ -1,0 +1,46 @@
+[window]
+decorations = "buttonless"
+opacity = 0.7
+blur = true
+padding.y = 15
+padding.x = 15
+
+[font]
+size =  15
+
+# Run font book app to get the correct font name
+normal.family = "Menlo"
+bold.family = "Menlo"
+italic.family = "Menlo"
+bold_italic.family = "Menlo"
+
+[selection]
+save_to_clipboard = true
+
+
+
+
+# Tokyo night storm
+[colors.bright]
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
+[colors.normal]
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#787c99"
+yellow = "#e0af68"
+
+[colors.primary]
+background = "#1a1b26"
+foreground = "#a9b1d6"

@@ -1,0 +1,99 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
+  "schemes" : [
+    {
+      "scrolling" : {
+        "distance" : {
+          "vertical" : "auto"
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "acceleration" : {
+          "vertical" : 0.5
+        },
+        "modifiers" : {
+          "vertical" : {
+            "shift" : {
+              "type" : "alterOrientation"
+            }
+          }
+        },
+        "speed" : {
+          "vertical" : 19.84
+        }
+      },
+      "pointer" : {
+        "speed" : 0.7,
+        "acceleration" : 0
+      },
+      "if" : {
+        "device" : {
+          "serialNumber" : "000000000000",
+          "productID" : "0xa6",
+          "category" : "mouse",
+          "productName" : "Razer Viper V2 Pro",
+          "vendorID" : "0x1532"
+        }
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 0.5
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 0.2
+        },
+        "speed" : {
+          "vertical" : 15
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "if" : {
+        "device" : {
+          "productName" : "MX Master 2S",
+          "vendorID" : "0x46d",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "productID" : "0xb019",
+          "category" : "mouse"
+        }
+      }
+    },
+    {
+      "if" : {
+        "display" : "U34G3XM",
+        "device" : {
+          "productName" : "MX Master 2S",
+          "vendorID" : "0x46d",
+          "productID" : "0xb019",
+          "category" : "mouse",
+          "serialNumber" : "6B7E34AD8363B06C"
+        }
+      },
+      "pointer" : {
+        "speed" : 0.18
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "MX Master 2S",
+          "productID" : "0xb019",
+          "category" : "mouse",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "vendorID" : "0x46d"
+        },
+        "display" : "PL2792QN"
+      },
+      "pointer" : {
+        "speed" : 0.15
+      }
+    }
+  ]
+}

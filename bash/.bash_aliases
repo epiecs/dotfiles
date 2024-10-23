@@ -1,7 +1,7 @@
 ## command aliases
 
-GNS3_SERVER="gns3"
-NOTESDIR=""
+GNS3_SERVER="gns3-gregory.rijkelhq.local"
+NOTESDIR="/Users/gregory/Desktop/Projects/obsidian-notes"
 
 # Aliases can use sudo
 alias sudo="sudo "
@@ -14,12 +14,14 @@ alias free="free -h"
 alias tree="tree -pug"
 alias dd='dd status=progress'
 
+alias console="picocom /dev/tty.usbserial-AH06CZLR"
+
 alias ffs='sudo !!'
 
 alias activate='source .venv/bin/activate'
 alias newvenv='python3 -m venv .venv'
 
-alias tothelab="cd /YOUR/DIR/HERE"
+alias tothelab="cd /Users/gregory/Desktop/Projects"
 alias syncnotes="git -C ${NOTESDIR} pull; git -C ${NOTESDIR} add .; git -C ${NOTESDIR} status; git -C ${NOTESDIR} commit -am 'sync'; git -C ${NOTESDIR} push"
 
 # quickly connect to lab device with lab <devname>
@@ -28,11 +30,6 @@ function lab() {
     xargs -I PID curl -sX GET http://${GNS3_SERVER}/v2/projects/PID/nodes | jq --arg node $1 '.[] | select(.name==$node) | .console' )
 
     telnet ${GNS3_SERVER} $PORT
-}
-
-function dockerbash() {
-    local shell="${2:-/bin/bash}"
-    docker exec -it $(docker ps | grep $1 | cut -c 1-4) $shell
 }
 
 alias rackpower="while true; do curl -sX GET http://10.30.180.21/status | jq .meters[0].power; sleep 1; done | pipeplot --min 50 --max 250 --direction right"
@@ -48,7 +45,6 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # For mac zsh notification
 export BASH_SILENCE_DEPRECATION_WARNING=1,
-
 # colors
 RESET="\[\017\]"
 NORMAL="\[\033[0m\]"
