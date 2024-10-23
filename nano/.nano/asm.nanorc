@@ -1,8 +1,6 @@
-## Syntax highlighting for assembler.
-
-## Original author:  Mike Frysinger
-
-syntax asm "\.(S|s|asm)$"
+## Here is an example for assembler.
+##
+syntax "ASM" "\.(S|s|asm)$"
 magic "assembler source"
 comment "//"
 
@@ -10,15 +8,13 @@ color red "\<[A-Z_]{2,}\>"
 color brightgreen "\.(data|subsection|text)"
 color green "\.(align|file|globl|global|hidden|section|size|type|weak)"
 color brightyellow "\.(ascii|asciz|byte|double|float|hword|int|long|short|single|struct|word)"
-color brightred "^[[:blank:]]*[.0-9A-Za-z_]*:"
-color brightcyan "^[[:blank:]]*#[[:blank:]]*(define|undef|include|ifn?def|endif|elif|else|if|warning|error)"
-
-# Strings and names of included files.
-color brightyellow ""([^"\]|\\.)*"|<[^= 	]*>"
-
-# Comments.
-color brightblue "//.*"
+icolor brightred "^[[:space:]]*[.0-9A-Z_]*:"
+color brightcyan "^[[:space:]]*#[[:space:]]*(define|undef|include|ifn?def|endif|elif|else|if|warning|error)"
+## Highlight strings (note: VERY resource intensive)
+color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
+color brightyellow start=""(\\.|[^"])*\\[[:space:]]*$" end="^(\\.|[^"])*""
+## Highlight comments
+color brightblue "^\s*//.*"
 color brightblue start="/\*" end="\*/"
-
-# Trailing whitespace.
+## Highlight trailing whitespace
 color ,green "[[:space:]]+$"
