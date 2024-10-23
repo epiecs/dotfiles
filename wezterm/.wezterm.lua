@@ -37,7 +37,7 @@ config = {
 
     -- Colors
     color_scheme = 'Tokyo Night',
-    
+
     -- Tab bar
     use_fancy_tab_bar = false,
     hide_tab_bar_if_only_one_tab = true,
@@ -85,28 +85,28 @@ config.keys = {
     -- Send C-a when pressing C-a twice
     { key = "p",          mods = mod_key,               action = act.ShowLauncher },
     { key = "p",          mods = "SHIFT|"..mod_key,     action = act.ActivateCommandPalette },
-  
+
     -- Pane keybindings
     { key = "-",          mods = "SHIFT|"..mod_key,     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
     { key = "=",          mods = "SHIFT|"..mod_key,     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-   
+
     { key = "w",          mods = mod_key,               action = act.CloseCurrentPane { confirm = true } },
-    { key = "Enter",      mods = mod_key,               action = act.TogglePaneZoomState },
+    { key = "Enter",      mods = "SHIFT|"..mod_key,     action = act.TogglePaneZoomState },
     { key = "o",          mods = mod_key,               action = act.RotatePanes "Clockwise" },
-    
+
     { key = "LeftArrow",  mods = mod_key,               action = act.ActivatePaneDirection("Left") },
     { key = "DownArrow",  mods = mod_key,               action = act.ActivatePaneDirection("Down") },
     { key = "UpArrow",    mods = mod_key,               action = act.ActivatePaneDirection("Up") },
     { key = "RightArrow", mods = mod_key,               action = act.ActivatePaneDirection("Right") },
-    
+
     { key = "LeftArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Left", 3 } },
     { key = "DownArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Down", 3 } },
     { key = "UpArrow",    mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Up", 3 } },
     { key = "RightArrow", mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Right", 3 } },
-    
+
     -- Tabs
     { key = "w",          mods = "SHIFT|"..mod_key,     action = act.CloseCurrentTab { confirm = true } },
-    
+
     -- Fonts
     { key = "-",          mods = mod_key,               action = act.DecreaseFontSize },
     { key = "=",          mods = mod_key,               action = act.IncreaseFontSize },
@@ -115,7 +115,7 @@ config.keys = {
     -- We can make separate keybindings for resizing panes
     -- But Wezterm offers custom "mode" in the name of "KeyTable"
     { key = "r",          mods = mod_key,               action = act.ActivateKeyTable { name = "resize_pane", one_shot = false } },
-  
+
     -- Tab keybindings
     { key = "t",          mods = mod_key,               action = act.SpawnTab("CurrentPaneDomain") },
     { key = "[",          mods = mod_key,               action = act.ActivateTabRelative(-1) },
