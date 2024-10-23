@@ -14,6 +14,8 @@ alias free="free -h"
 alias tree="tree -pug"
 alias dd='dd status=progress'
 
+alias gs='git status'
+
 alias console="picocom /dev/tty.usbserial-AH06CZLR"
 
 alias ffs='sudo !!'
