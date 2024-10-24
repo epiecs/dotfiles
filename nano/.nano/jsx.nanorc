@@ -1,22 +1,24 @@
-### all *js and *mjs files  ( e.g. Firefox user.js, prefs.js )
+### JavaScript XML files (derived from JavaScript)
 
-## Old version
-#syntax "JavaScript" "(\.|/|)js$"
-#color green "//.*$" start="\/\*" end="\*\/"
-#color blue "'(\\.|[^'])*'"
-#color red ""(\\.|[^\"])*""
-#color brightgreen "\<(true)\>"
-#color brightred "\<(false)\>" "http\:\/\/.*$"
-#color brightmagenta "[0-9](\\.|[^\"])*)"
-
-## New updated taken from http://wiki.linuxhelp.net/index.php/Nano_Syntax_Highlighting
-
-syntax "JavaScript" "\.(m?js|ts|javascript|typescript)$"
+syntax "JSX" "\.jsx$"
 header "^#!.*\/(env +)node"
 comment "//"
 
 ## Default
 color white "^.+$"
+
+## HTML tags
+color orange start="<" end=">"
+## HTML Attributes
+color magenta "[[:space:]](abbr|accept(-charset)?|accesskey|action|[av]?link|alt|archive|axis|background|(bg)?color|border)="
+color magenta "[[:space:]](cell(padding|spacing)|char(off|set)?|checked|cite|class(id)?|compact|code(base|tag)?|cols(pan)?)="
+color magenta "[[:space:]](content(editable)?|contextmenu|coords|data|datetime|declare|defer|dir|enctype)="
+color magenta "[[:space:]](for|frame(border)?|headers|height|hidden|href(lang)?|hspace|http-equiv|id|ismap)="
+color magenta "[[:space:]](label|lang|longdesc|margin(height|width)|maxlength|media|method|multiple)="
+color magenta "[[:space:]](name|nohref|noresize|noshade|object|on(click|focus|load|mouseover|keypress)|profile|readonly|rel|rev)="
+color magenta "[[:space:]](rows(pan)?|rules|scheme|scope|scrolling|shape|size|span|src|standby|start|style|summary|pattern)="
+color magenta "[[:space:]](tabindex|target|text|title|type|usemap|v?align|value(type)?|vspace|width|xmlns|xml:space)="
+color magenta "[[:space:]](required|disabled|selected)[[:space:]=>]"
 
 ## Decimal, octal and hexadecimal numbers
 color yellow "\<[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\>"
@@ -50,8 +52,8 @@ color brightyellow "L?'(\\'|[^'])*'"
 color brightyellow "L?`(\\`|[^`])*`"
 color brightwhite,blue start="\$\{" end="\}"
 
-## Regex
-color magenta "/[^*]([^/]|(\\/))*[^\\]/[gim]*"
+## Regex (will likely mess up with urls)
+#color magenta "/[^*]([^/]|(\\/))*[^\\<]/[gim]*"
 
 ## Escapes
 color yellow "\\[0-7][0-7]?[0-7]?|\\x[0-9a-fA-F]+|\\[bfnrt'"`\?\\]"
