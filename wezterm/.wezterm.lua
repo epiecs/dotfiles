@@ -50,6 +50,8 @@ config = {
     },
 
     -- Fonts
+    -- Use the `Fontbook` app on mac to get the correct font name
+    -- Use `wezterm ls-fonts` to get a list of built-in fonts
     font_size = 14,
     font = wezterm.font_with_fallback {
         {
