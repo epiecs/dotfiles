@@ -6,6 +6,11 @@ NOTESDIR="/Users/gregory/Desktop/Projects/obsidian-notes"
 # Aliases can use sudo
 alias sudo="sudo "
 
+# Mac specific settings
+if [ "$(uname)" == "Darwin" ]; then
+    alias clip="pbcopy"
+fi
+
 alias ll="ls -lhF"
 alias la="ls -alhF"
 alias l='ls -CF'
