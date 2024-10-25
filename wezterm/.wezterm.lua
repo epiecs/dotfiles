@@ -53,6 +53,10 @@ config = {
     font_size = 14,
     font = wezterm.font_with_fallback {
         {
+            family = 'oxProto Nerd Font Mono',
+            weight = 'Regular',
+        },
+        {
             family = 'Cascadia Mono',
             weight = 'Bold',
         },
