@@ -1,3 +1,4 @@
+
 ## command aliases
 
 GNS3_SERVER="gns3-gregory.rijkelhq.local"
@@ -21,8 +22,9 @@ alias tree="tree -pug"
 alias dd='dd status=progress'
 
 # Tmux aliases
-alias ta='tmux attach'
-alias tks='tmux kill-server'
+alias tat='tmux attach'
+alias tls='tmux ls'
+alias tkill='tmux kill-server'
 
 # Git aliases
 alias gs='git status'

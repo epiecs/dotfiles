@@ -12,8 +12,8 @@ local mod_alt  = "ALT"
 
 -- Mac
 if is_mac then
-    local mod_ctrl = "CMD"
-    local mod_alt  = "OPT"
+    mod_ctrl = "CMD"
+    mod_alt  = "OPT"
 end
 
 -- Add folders to path
@@ -110,8 +110,7 @@ config.keys = {
 
     { key = "w",          mods = mod_ctrl,               action = act.CloseCurrentPane { confirm = true } },
     { key = "Enter",      mods = "SHIFT|"..mod_ctrl,     action = act.TogglePaneZoomState },
-    { key = "o",          mods = mod_ctrl,               action = act.RotatePanes "Clockwise" },
-
+    
     { key = "LeftArrow",  mods = mod_ctrl,               action = act.ActivatePaneDirection("Left") },
     { key = "DownArrow",  mods = mod_ctrl,               action = act.ActivatePaneDirection("Down") },
     { key = "UpArrow",    mods = mod_ctrl,               action = act.ActivatePaneDirection("Up") },
