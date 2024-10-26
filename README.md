@@ -38,5 +38,5 @@ A collection of my dotfiles
 
     ```
     cd ~/dotfiles
-    stow bash git karabiner linearmouse nano wezterm
+    stow bash git karabiner linearmouse nano tmux wezterm
     ```

@@ -4,11 +4,17 @@ local act = wezterm.action
 local config = {}
 if wezterm.config_builder() then config = wezterm.config_builder() end
 
+local is_mac <const> = wezterm.target_triple:find("darwin") ~= nil
+
 -- WIN/Linux
-local mod_key = "ALT"
+local mod_ctrl = "CTRL"
+local mod_alt  = "ALT"
 
 -- Mac
-local mod_key = "CMD"
+if is_mac then
+    local mod_ctrl = "CMD"
+    local mod_alt  = "OPT"
+end
 
 -- Add folders to path
 config.set_environment_variables = {
@@ -88,48 +94,54 @@ config = {
 }
 
 config.keys = {
-    -- Send C-a when pressing C-a twice
-    { key = "p",          mods = mod_key,               action = act.ShowLauncher },
-    { key = "p",          mods = "SHIFT|"..mod_key,     action = act.ActivateCommandPalette },
+    -- Commands and tab launcher
+    { key = "p",          mods = mod_ctrl,               action = act.ShowLauncher },
+    { key = "p",          mods = "SHIFT|"..mod_ctrl,     action = act.ActivateCommandPalette },
+
+    -- Text navigation
+    -- Make Option/alt-Left equivalent to Alt-b which many line editors interpret as backward-word
+    { key = 'LeftArrow',  mods = mod_alt,                 action = act.SendString '\x1bb' },
+    -- Make Option/alt-Right equivalent to Alt-f; forward-word
+    { key = 'RightArrow', mods = mod_alt,                 action = act.SendString '\x1bf' },
 
     -- Pane keybindings
-    { key = "-",          mods = "SHIFT|"..mod_key,     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
-    { key = "=",          mods = "SHIFT|"..mod_key,     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+    { key = "-",          mods = "SHIFT|"..mod_ctrl,     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+    { key = "=",          mods = "SHIFT|"..mod_ctrl,     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
 
-    { key = "w",          mods = mod_key,               action = act.CloseCurrentPane { confirm = true } },
-    { key = "Enter",      mods = "SHIFT|"..mod_key,     action = act.TogglePaneZoomState },
-    { key = "o",          mods = mod_key,               action = act.RotatePanes "Clockwise" },
+    { key = "w",          mods = mod_ctrl,               action = act.CloseCurrentPane { confirm = true } },
+    { key = "Enter",      mods = "SHIFT|"..mod_ctrl,     action = act.TogglePaneZoomState },
+    { key = "o",          mods = mod_ctrl,               action = act.RotatePanes "Clockwise" },
 
-    { key = "LeftArrow",  mods = mod_key,               action = act.ActivatePaneDirection("Left") },
-    { key = "DownArrow",  mods = mod_key,               action = act.ActivatePaneDirection("Down") },
-    { key = "UpArrow",    mods = mod_key,               action = act.ActivatePaneDirection("Up") },
-    { key = "RightArrow", mods = mod_key,               action = act.ActivatePaneDirection("Right") },
+    { key = "LeftArrow",  mods = mod_ctrl,               action = act.ActivatePaneDirection("Left") },
+    { key = "DownArrow",  mods = mod_ctrl,               action = act.ActivatePaneDirection("Down") },
+    { key = "UpArrow",    mods = mod_ctrl,               action = act.ActivatePaneDirection("Up") },
+    { key = "RightArrow", mods = mod_ctrl,               action = act.ActivatePaneDirection("Right") },
 
-    { key = "LeftArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Left", 3 } },
-    { key = "DownArrow",  mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Down", 3 } },
-    { key = "UpArrow",    mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Up", 3 } },
-    { key = "RightArrow", mods = "SHIFT|"..mod_key,     action = act.AdjustPaneSize{"Right", 3 } },
+    { key = "LeftArrow",  mods = "SHIFT|"..mod_ctrl,     action = act.AdjustPaneSize{"Left", 3 } },
+    { key = "DownArrow",  mods = "SHIFT|"..mod_ctrl,     action = act.AdjustPaneSize{"Down", 3 } },
+    { key = "UpArrow",    mods = "SHIFT|"..mod_ctrl,     action = act.AdjustPaneSize{"Up", 3 } },
+    { key = "RightArrow", mods = "SHIFT|"..mod_ctrl,     action = act.AdjustPaneSize{"Right", 3 } },
 
     -- Tabs
-    { key = "w",          mods = "SHIFT|"..mod_key,     action = act.CloseCurrentTab { confirm = true } },
+    { key = "w",          mods = "SHIFT|"..mod_ctrl,     action = act.CloseCurrentTab { confirm = true } },
 
     -- Fonts
-    { key = "-",          mods = mod_key,               action = act.DecreaseFontSize },
-    { key = "=",          mods = mod_key,               action = act.IncreaseFontSize },
+    { key = "-",          mods = mod_ctrl,               action = act.DecreaseFontSize },
+    { key = "=",          mods = mod_ctrl,               action = act.IncreaseFontSize },
 
     -- Resize panes
     -- We can make separate keybindings for resizing panes
     -- But Wezterm offers custom "mode" in the name of "KeyTable"
-    { key = "r",          mods = mod_key,               action = act.ActivateKeyTable { name = "resize_pane", one_shot = false } },
+    { key = "r",          mods = mod_ctrl,               action = act.ActivateKeyTable { name = "resize_pane", one_shot = false } },
 
     -- Tab keybindings
-    { key = "t",          mods = mod_key,               action = act.SpawnTab("CurrentPaneDomain") },
-    { key = "[",          mods = mod_key,               action = act.ActivateTabRelative(-1) },
-    { key = "]",          mods = mod_key,               action = act.ActivateTabRelative(1) },
-    { key = "t",          mods = "SHIFT|"..mod_key,     action = act.ShowTabNavigator },
+    { key = "t",          mods = mod_ctrl,               action = act.SpawnTab("CurrentPaneDomain") },
+    { key = "[",          mods = mod_ctrl,               action = act.ActivateTabRelative(-1) },
+    { key = "]",          mods = mod_ctrl,               action = act.ActivateTabRelative(1) },
+    { key = "t",          mods = "SHIFT|"..mod_ctrl,     action = act.ShowTabNavigator },
     {
       key = "e",
-      mods = "SHIFT|"..mod_key,
+      mods = "SHIFT|"..mod_ctrl,
       action = act.PromptInputLine {
         description = wezterm.format {
           { Attribute = { Intensity = "Bold" } },

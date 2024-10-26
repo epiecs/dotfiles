@@ -11,6 +11,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias clip="pbcopy"
 fi
 
+# Base aliases
 alias ll="ls -lhF"
 alias la="ls -alhF"
 alias l='ls -CF'
@@ -19,6 +20,11 @@ alias free="free -h"
 alias tree="tree -pug"
 alias dd='dd status=progress'
 
+# Tmux aliases
+alias ta='tmux attach'
+alias tks='tmux kill-server'
+
+# Git aliases
 alias gs='git status'
 
 alias console="picocom /dev/tty.usbserial-AH06CZLR"
