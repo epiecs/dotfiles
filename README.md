@@ -20,6 +20,12 @@ A collection of my dotfiles
     cd ~/dotfiles
     ```
 
+- Install Tmux Plugin Manager if you need it. Don't forget to comment out what is needed in `.tmux.conf`
+
+    ```
+    git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/.tmux/plugins/tpm
+    ```
+
 - Install all packages with the `Brewfile`
 
     `brew bundle install --file=~/dotfiles/Brewfile`
