@@ -44,5 +44,5 @@ A collection of my dotfiles
 
     ```
     cd ~/dotfiles
-    stow bash git karabiner linearmouse nano tmux wezterm
+    stow bash git karabiner linearmouse nano nvim tmux wezterm
     ```
