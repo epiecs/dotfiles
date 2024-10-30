@@ -12,6 +12,10 @@ if [ "$(uname)" == "Darwin" ]; then
     alias clip="pbcopy"
 fi
 
+# Mac specific commands
+# turns of indexing, removes indexes and restarts indexing
+alias rebuildspotlight="sudo mdutil -a -i off; sudo rm -rf /.Spotlight* ; sudo mdutil -a -i on; sudo mdutil -E"
+
 # Base aliases
 alias ll="ls -lhF"
 alias la="ls -alhF"
