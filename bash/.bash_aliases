@@ -32,7 +32,9 @@ alias tkill='tmux kill-server'
 
 # Git aliases
 alias gs='git status'
+alias ga='git add'
 
+# Serial connections
 alias console="picocom /dev/tty.usbserial-AH06CZLR"
 
 alias ffs='sudo !!'
