@@ -40,6 +40,15 @@ A collection of my dotfiles
     mas install 1451685025
     ```
 
+- Set the correct bash version as your default shell
+
+    ```
+    sudo nano /etc/shells
+    <add /opt/homebrew/bin/bash> and save
+
+    update default shell chsh -s /opt/homebrew/bin/bash
+    ```
+
 - Use `stow` to setup all needed dotfiles
 
     ```
