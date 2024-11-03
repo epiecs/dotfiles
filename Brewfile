@@ -10,6 +10,8 @@ brew "mas"
 
 # programs
 brew "bash"
+brew "bat"
+brew "fzf"
 brew "git"
 brew "jq"
 brew "libpcap"

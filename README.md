@@ -55,3 +55,12 @@ A collection of my dotfiles
     cd ~/dotfiles
     stow bash git karabiner linearmouse nano nvim tmux wezterm
     ```
+
+- Build the `bat` theme cache, Tokyonight is already set
+
+    ```
+    bat cache --build
+
+    # You can also list all known themes and then install this theme in bat/.config/bat/config
+    bat --list-themes 
+    ```

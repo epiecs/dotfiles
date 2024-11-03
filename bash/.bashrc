@@ -76,6 +76,11 @@ alias newvenv='python3 -m venv .venv'
 alias tothelab="cd ${LABDIR}"
 alias syncnotes="git -C ${NOTESDIR} pull; git -C ${NOTESDIR} add .; git -C ${NOTESDIR} status; git -C ${NOTESDIR} commit -am 'sync'; git -C ${NOTESDIR} push"
 
+# # Aliases only if the tool is installed
+# if [command -v bat 2>&1 >/dev/null]; then
+#     alias cat="bat -pp"
+# fi
+
 # Serial connections
 alias console="picocom ${SERIAL_ADAPTER}"
 
