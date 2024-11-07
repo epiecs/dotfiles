@@ -43,6 +43,8 @@ alias sudo="sudo "
 # Mac specific, map clip to pbcopy
 if [ "$(uname)" == "Darwin" ]; then
     alias clip="pbcopy"
+else
+    alias clip="xclip"
 fi
 
 # Mac specific commands
