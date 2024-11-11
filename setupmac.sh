@@ -4,6 +4,10 @@
 ## https://developer.apple.com/documentation/devicemanagement
 ## https://developer.okta.com/blog/2021/07/19/discover-macos-settings-with-plistwatch
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 # don't annoy me with sudo halfway and just get it over with by getting a timestamp
 sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
