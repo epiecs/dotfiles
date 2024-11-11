@@ -1,0 +1,151 @@
+## https://macos-defaults.com/
+## https://dev.to/darrinndeal/setting-mac-hot-corners-in-the-terminal-3de
+## https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+## https://developer.apple.com/documentation/devicemanagement
+## https://developer.okta.com/blog/2021/07/19/discover-macos-settings-with-plistwatch
+
+# don't annoy me with sudo halfway and just get it over with by getting a timestamp
+sudo -v
+# Keep-alive: update existing `sudo` time stamp until this script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Cleanup
+defaults write com.apple.dock persistent-apps -array                    # remove all default apps from the dock
+
+# Dock settings
+defaults write com.apple.dock "orientation" -string "bottom"
+defaults write com.apple.dock "tilesize" -int "48"
+defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.dock "show-recents" -bool "false"
+defaults write com.apple.dock "mru-spaces" -bool "false"                # don't auto sort spaces
+killall Dock
+
+# Screenshot settings
+defaults write com.apple.screencapture "disable-shadow" -bool "true"
+
+# Finder settings
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"     # show all file extensions
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"        # show hidden files
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+defaults write com.apple.finder "ShowStatusBar" -bool "true"
+defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"   # default column view
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"      # folders always on top
+killall Finder
+
+# Menu bar Settings
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"d MMM HH:mm\""
+
+# Dock hot corner settings
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 5                    # Top right starts screensaver
+defaults write com.apple.dock wvous-tr-modifier -int 0
+killall Dock
+
+# Mission control settings
+defaults write NSGlobalDomain "AppleSpacesSwitchOnActivate" -bool "false"
+killall Dock
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Spotlight settings
+defaults write com.apple.spotlight orderedItems -array \
+'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+'{"enabled" = 1;"name" = "PDF";}' \
+'{"enabled" = 1;"name" = "FONTS";}' \
+'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+'{"enabled" = 0;"name" = "MESSAGES";}' \
+'{"enabled" = 1;"name" = "CONTACT";}' \
+'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+'{"enabled" = 0;"name" = "IMAGES";}' \
+'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+'{"enabled" = 0;"name" = "MUSIC";}' \
+'{"enabled" = 0;"name" = "MOVIES";}' \
+'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+'{"enabled" = 0;"name" = "SOURCE";}' \
+'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+'{"enabled" = 0;"name" = "MENU_OTHER";}' \
+'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+# Load new settings before rebuilding the index
+killall mds > /dev/null 2>&1
+# Make sure indexing is enabled for the main volume
+sudo mdutil -i on / > /dev/null
+# Rebuild the index from scratch
+sudo mdutil -E / > /dev/null
+
+# System settings
+    # Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+    # Visualize CPU usage in the Activity Monitor Dock icon
+defaults write com.apple.ActivityMonitor IconType -int 5
+    # Show all processes in Activity Monitor
+defaults write com.apple.ActivityMonitor ShowCategory -int 0
+    # Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+    # Sort Activity Monitor results by CPU usage
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0
+    # Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+# Update settings
+    # Automatically install only security/critical updates
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+defaults write com.apple.SoftwareUpdate AutomaticDownload -bool true
+defaults write com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates -bool false
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
+defaults write com.apple.SoftwareUpdate ConfigDataInstall -bool true
+
+# Set correct shell to bash, only add if it does not exist yet
+# You can check this manually in system preferences
+# users and groups, option right click your user and choose advanced settings
+grep -qxF '/opt/homebrew/bin/bash' /etc/shells || echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
+sudo chsh -s /opt/homebrew/bin/bash $USER
+
+# Set low power mode when on battery
+# -b is battery and -c is charger and -a is all
+# view with pmset -g custom
+    # Battery
+sudo pmset -b lowpowermode 1
+sudo pmset -b displaysleep 10
+sudo pmset -b lessbright 0
+    # Charger
+sudo pmset -c displaysleep 10
+sudo pmset -c sleep 0
+
+# Control center visibility settings
+defaults write com.apple.controlcenter "NSStatusItem Visible AudioVideoModule" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible BentoBox" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Clock" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible FaceTime" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible FocusModes" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible KeyboardBrightness" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible ScreenMirroring" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
+
+# Trackpad settings
+defaults write com.apple.swipescrolldirection -bool true
+    # three fingers swipe between pages
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerHorizSwipeGesture" -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad "TrackpadThreeFingerHorizSwipeGesture" -int 1
+    # 4 fingers swipes between spaces
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadFourFingerHorizSwipeGesture" -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad "TrackpadFourFingerHorizSwipeGesture" -int 2
+    # disable launchpad gesture
+defaults write com.apple.dock "showLaunchpadGestureEnabled" -bool false
+    # disable show desktop gesture
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadFiveFingerPinchGesture" -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad "TrackpadFiveFingerPinchGesture" -int 0

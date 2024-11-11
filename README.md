@@ -4,41 +4,6 @@ A collection of my dotfiles
 
 ## Mac setup
 
-- Basic mac settings
-
-    ```
-    ## https://macos-defaults.com/
-
-    # Dock settings
-    defaults write com.apple.dock "orientation" -string "bottom"
-    defaults write com.apple.dock "tilesize" -int "48"
-    defaults write com.apple.dock "autohide" -bool "true"
-    defaults write com.apple.dock "show-recents" -bool "false"
-    killall Dock
-
-    # Screenshot settings
-    defaults write com.apple.screencapture "disable-shadow" -bool "true"
-
-    # Finder settings
-    defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
-    defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
-    defaults write com.apple.finder "ShowPathbar" -bool "true"
-    defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
-    defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
-    killall Finder
-
-    # Menu bar Settings
-    defaults write com.apple.menuextra.clock "DateFormat" -string "\"d MMM HH:mm\""
-
-    # Dock settings
-    defaults write com.apple.dock "mru-spaces" -bool "false"
-    killall Dock
-
-    # Mission control settings
-    defaults write NSGlobalDomain "AppleSpacesSwitchOnActivate" -bool "false"
-    killall Dock
-    ```
-
 - Install homebrew
 
     `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
@@ -99,3 +64,27 @@ A collection of my dotfiles
     # You can also list all known themes and then install this theme in bat/.config/bat/config
     bat --list-themes 
     ```
+
+- Mac settings
+
+    ```
+    chmod +x setupmac.sh
+    ./setupmac.sh
+
+    brew cleanup
+    ```
+
+- Reboot
+
+- Manual todo
+
+    - Import private key from your password manager
+    
+    ```
+    # Regenerate pubkey
+    ssh-keygen -f ~/.ssh/id_ed25519 -y > ~/.ssh/id_ed25519.pub
+    ```
+    - Set correct login items
+    - Login to obsidian
+    - Install printer
+    - Disable private mac on wifi where needed

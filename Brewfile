@@ -1,5 +1,6 @@
 # generate with `brew bundle dump --file=~/dotfiles/Brewfile`
 # install with `brew bundle install --file=~/dotfiles/Brewfile`
+# https://homebrew-file.readthedocs.io/en/latest/usage.html#brewfile
 
 tap "homebrew/core"
 tap "homebrew/bundle"
@@ -11,6 +12,7 @@ brew "mas"
 # programs
 brew "bash"
 brew "bat"
+brew "coreutils"
 brew "fzf"
 brew "git"
 brew "jq"
@@ -19,11 +21,13 @@ brew "minicom"
 brew "mtr"
 brew "nano"
 brew "neofetch"
+brew "openssh"
 brew "pandoc"
 brew "picocom"
 brew "python"
 brew "ripgrep"
 brew "speedtest-cli"
+brew "ssh-copy-id"
 brew "stow"
 brew "telnet"
 brew "tmux"
@@ -36,6 +40,7 @@ cask "alt-tab"
 cask "basictex"
 cask "bruno"
 cask "discord"
+# cask "fliqlo" # clock screensaver
 cask "karabiner-elements"
 cask "jordanbaird-ice"
 cask "linearmouse"
