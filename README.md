@@ -20,7 +20,7 @@ A collection of my dotfiles
 
     ```
     cd ~
-    git clone git@github.com:epiecs/dotfiles.git
+    git clone https://github.com/epiecs/dotfiles.git
     cd ~/dotfiles
     ```
 
@@ -49,6 +49,8 @@ A collection of my dotfiles
     mas install 1295203466
     ```
 
+- Reboot
+
 - Run the following tools and accept all needed permissions
     - Aldente
     - AltTab
@@ -76,8 +78,9 @@ A collection of my dotfiles
     chsh -s /opt/homebrew/bin/bash $USER
 
     # Restart your terminal
-    # This will work properly after a reboot
     ```
+
+- Reboot, else your new bash version won't work
 
 - Build the `bat` theme cache, Tokyonight is already set
 
