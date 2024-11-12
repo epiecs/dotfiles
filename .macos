@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ## https://macos-defaults.com/
 ## https://dev.to/darrinndeal/setting-mac-hot-corners-in-the-terminal-3de
 ## https://github.com/mathiasbynens/dotfiles/blob/master/.macos
@@ -22,7 +24,6 @@ defaults write com.apple.dock "tilesize" -int "48"
 defaults write com.apple.dock "autohide" -bool "true"
 defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "mru-spaces" -bool "false"                # don't auto sort spaces
-killall Dock
 
 # Screenshot settings
 defaults write com.apple.screencapture "disable-shadow" -bool "true"
@@ -34,21 +35,25 @@ defaults write com.apple.finder "ShowPathbar" -bool "true"
 defaults write com.apple.finder "ShowStatusBar" -bool "true"
 defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"   # default column view
 defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"      # folders always on top
-killall Finder
+    # Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+    # Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Menu bar Settings
 defaults write com.apple.menuextra.clock "DateFormat" -string "\"d MMM HH:mm\""
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"HH:mm\""
 
 # Dock hot corner settings
 defaults write com.apple.dock wvous-br-corner -int 0
 defaults write com.apple.dock wvous-br-modifier -int 0
 defaults write com.apple.dock wvous-tr-corner -int 5                    # Top right starts screensaver
 defaults write com.apple.dock wvous-tr-modifier -int 0
-killall Dock
 
 # Mission control settings
 defaults write NSGlobalDomain "AppleSpacesSwitchOnActivate" -bool "false"
-killall Dock
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -100,6 +105,10 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
     # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
+# Audio settings
+sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
+sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
+
 # Update settings
     # Automatically install only security/critical updates
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -123,7 +132,7 @@ sudo pmset -b displaysleep 10
 sudo pmset -b lessbright 0
     # Charger
 sudo pmset -c displaysleep 10
-sudo pmset -c sleep 0
+sudo pmset -c sleep 0           # dont't sleep when charging
 
 # Control center visibility settings
 defaults write com.apple.controlcenter "NSStatusItem Visible AudioVideoModule" -bool true
@@ -153,3 +162,13 @@ defaults write com.apple.dock "showLaunchpadGestureEnabled" -bool false
     # disable show desktop gesture
 defaults write com.apple.AppleMultitouchTrackpad "TrackpadFiveFingerPinchGesture" -int 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad "TrackpadFiveFingerPinchGesture" -int 0
+
+# Import app preferences
+defaults import app-settings/alt-tab-macos.plist ~/Library/Preferences/com.lwouis.alt-tab-macos.plist
+
+## Reload
+killall ControlCenter
+killall Dock
+killall Finder
+killall NotificationCenter
+killall SystemUIServer

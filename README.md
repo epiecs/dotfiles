@@ -68,23 +68,59 @@ A collection of my dotfiles
 - Mac settings
 
     ```
-    chmod +x setupmac.sh
-    ./setupmac.sh
+    chmod +x .macos
+    ./.macos
 
     brew cleanup
     ```
 
 - Reboot
 
-- Manual todo
+- Import private key from your password manager
 
-    - Import private key from your password manager
-    
     ```
-    # Regenerate pubkey
+    mkdir -p ~/.ssh
+    nano ~/.ssh/id_ed25519
+    # paste key
+
+    chmod 700 ~/.ssh
+    chmod 600 ~/.ssh/id_ed25519
     ssh-keygen -f ~/.ssh/id_ed25519 -y > ~/.ssh/id_ed25519.pub
     ```
+
+- Set your ssh config to use your key
+
+    ```
+    nano ~/.ssh/config
+
+    Host *
+        IdentityFile /Users/gregory/.ssh/id_ed25519
+    ```
+
+- Manual todo
+
     - Set correct login items
+    - Import rectangle config
+    - Import wireguard tunnels
     - Login to obsidian
-    - Install printer
+    - Install printer(s)
     - Disable private mac on wifi where needed
+
+
+## Handy functions
+
+App settings can be found in `~/Library/Preferences`. You can export them (example alttab):
+
+```
+defaults export com.lwouis.alt-tab-macos ~/Downloads/com.lwouis.alt-tab-macos.plist
+```
+
+An example on how to import them can be found in the `.macos` script
+
+## Handy links
+
+- https://macos-defaults.com/
+- https://dev.to/darrinndeal/setting-mac-hot-corners-in-the-terminal-3de
+- https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+- https://developer.apple.com/documentation/devicemanagement
+- https://developer.okta.com/blog/2021/07/19/discover-macos-settings-with-plistwatch
