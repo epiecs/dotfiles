@@ -122,20 +122,32 @@ A collection of my dotfiles
 
 - Manual todo
 
-    - Set correct login items
     - Import rectangle config
     - Import wireguard tunnels
     - Login to obsidian
         - The vault can be opened from your projects folder
     - Install printer(s)
-    - Disable private mac on wifi where needed
-    - Set/check your hostname
+
     - Set your user image
+    - Set/check your hostname
+        - General > About > Click on the name to edit
+
     - Login to edge and sync with your `gregorybers@gregorybers.eu` account
+        - Transfer open tabs with `tabox`
     - Login to vscode and sync
-    - Drag correct items in dock
-    - Aldente appearance > other -> do not show dock icon
+    - Disable private mac on wifi where needed
     - Transfer files and projects
+    
+
+    - Set correct login items
+    - Aldente appearance > other -> do not show dock icon
+    - Drag correct items in dock
+    - finder -> preferences -> sidebar 
+        - show main disk
+        - choose sidebar items
+        - add needed folders to sidebar
+    - notifications
+        - disable tips
 
 
 ## Handy functions
@@ -149,6 +161,13 @@ defaults export com.lwouis.alt-tab-macos ~/Downloads/com.lwouis.alt-tab-macos.pl
 ```
 
 An example on how to import them can be found in the `.macos` script
+
+Export current settings:
+
+```
+defaults export com.lwouis.alt-tab-macos ~/dotfiles/app-settings/alt-tab.plist
+defaults export com.jordanbaird.Ice.plist ~/dotfiles/app-settings/ice.plist
+```
 
 ### App store list of apps
 
@@ -165,10 +184,6 @@ An example on how to import them can be found in the `.macos` script
 
 ## Todo
 
-- cant load alttab settings before the app has loaded
 - find a way with defaults to allow apps to control my mac
 - battery %
-- ice settings
 - show mac main disk in finder
-- dont show spotlight in menubar
-- system > desktop > disable click wallpaper
