@@ -38,6 +38,9 @@ A collection of my dotfiles
 
     # Wireguard
     mas install 1451685025
+
+    # Microsoft remote desktop
+    mas install 1295203466
     ```
 
 - Set the correct bash version as your default shell
@@ -105,9 +108,12 @@ A collection of my dotfiles
     - Login to obsidian
     - Install printer(s)
     - Disable private mac on wifi where needed
+    - Set/check your hostname
 
 
 ## Handy functions
+
+### Apps that use the built in mac preferences
 
 App settings can be found in `~/Library/Preferences`. You can export them (example alttab):
 
@@ -116,6 +122,10 @@ defaults export com.lwouis.alt-tab-macos ~/Downloads/com.lwouis.alt-tab-macos.pl
 ```
 
 An example on how to import them can be found in the `.macos` script
+
+### App store list of apps
+
+`mas list`
 
 ## Handy links
 
