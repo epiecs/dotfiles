@@ -134,3 +134,4 @@ An example on how to import them can be found in the `.macos` script
 - https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 - https://developer.apple.com/documentation/devicemanagement
 - https://developer.okta.com/blog/2021/07/19/discover-macos-settings-with-plistwatch
+- https://www.idownloadblog.com/2021/05/13/how-to-improve-bluetooth-audio-mac/
