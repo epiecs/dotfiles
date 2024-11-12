@@ -51,7 +51,6 @@ cask "sequel-pro"
 cask "spotify"
 cask "visual-studio-code"
 cask "wezterm"
-cask "wireguard"
 cask "wireshark"
 cask "zotero"
 
