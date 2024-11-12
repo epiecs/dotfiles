@@ -6,11 +6,15 @@ A collection of my dotfiles
 
 - Install homebrew
 
-    `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+    ```
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 
 - Install git
 
-    `brew install git`
+    ```
+    brew install git
+    ```
 
 - Clone this repository and navigate to the directory
 
@@ -28,7 +32,9 @@ A collection of my dotfiles
 
 - Install all packages with the `Brewfile`
 
-    `brew bundle install --file=~/dotfiles/Brewfile`
+    ```
+    brew bundle install --file=~/dotfiles/Brewfile
+    ```
 
 - Some packages can not be installed via homebrew. Install these with mas
 
