@@ -49,20 +49,34 @@ A collection of my dotfiles
     mas install 1295203466
     ```
 
+- Run the following tools and accept all needed permissions
+    - Aldente
+    - AltTab
+    - Amphetamine
+    - Discord
+    - Ice
+    - Karabiner-Elements
+    - Powershell
+    - Rectangle Pro
+
+- Use `stow` to setup all needed dotfiles
+
+    ```
+    cd ~/dotfiles
+    stow bash bat git karabiner linearmouse nano nvim tmux wezterm
+    ```
+
 - Set the correct bash version as your default shell
 
     ```
     sudo nano /etc/shells
     <add /opt/homebrew/bin/bash> and save
 
-    update default shell chsh -s /opt/homebrew/bin/bash
-    ```
+    # Update default shell
+    chsh -s /opt/homebrew/bin/bash $USER
 
-- Use `stow` to setup all needed dotfiles
-
-    ```
-    cd ~/dotfiles
-    stow bash git karabiner linearmouse nano nvim tmux wezterm
+    # Restart your terminal
+    # This will work properly after a reboot
     ```
 
 - Build the `bat` theme cache, Tokyonight is already set
@@ -112,9 +126,16 @@ A collection of my dotfiles
     - Import rectangle config
     - Import wireguard tunnels
     - Login to obsidian
+        - The vault can be opened from your projects folder
     - Install printer(s)
     - Disable private mac on wifi where needed
     - Set/check your hostname
+    - Set your user image
+    - Login to edge and sync with your `gregorybers@gregorybers.eu` account
+    - Login to vscode and sync
+    - Drag correct items in dock
+    - Aldente appearance > other -> do not show dock icon
+    - Transfer files and projects
 
 
 ## Handy functions
@@ -141,3 +162,13 @@ An example on how to import them can be found in the `.macos` script
 - https://developer.apple.com/documentation/devicemanagement
 - https://developer.okta.com/blog/2021/07/19/discover-macos-settings-with-plistwatch
 - https://www.idownloadblog.com/2021/05/13/how-to-improve-bluetooth-audio-mac/
+
+## Todo
+
+- cant load alttab settings before the app has loaded
+- find a way with defaults to allow apps to control my mac
+- battery %
+- ice settings
+- show mac main disk in finder
+- dont show spotlight in menubar
+- system > desktop > disable click wallpaper
