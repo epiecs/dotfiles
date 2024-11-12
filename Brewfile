@@ -2,9 +2,7 @@
 # install with `brew bundle install --file=~/dotfiles/Brewfile`
 # https://homebrew-file.readthedocs.io/en/latest/usage.html#brewfile
 
-tap "homebrew/core"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 
 # Mac App Store cli installer
 brew "mas"
