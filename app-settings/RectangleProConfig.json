@@ -194,7 +194,7 @@
 
     },
     "menuCategoryVisibility" : {
-
+      "string" : "{\"13\":{\"shown\":false,\"shownAsSubmenu\":true},\"6\":{\"shown\":false,\"shownAsSubmenu\":false},\"9\":{\"shownAsSubmenu\":false,\"shown\":false},\"3\":{\"shown\":false,\"shownAsSubmenu\":true},\"5\":{\"shownAsSubmenu\":false,\"shown\":false},\"10\":{\"shown\":false,\"shownAsSubmenu\":false},\"12\":{\"shown\":false,\"shownAsSubmenu\":false},\"14\":{\"shown\":false,\"shownAsSubmenu\":true},\"11\":{\"shownAsSubmenu\":true,\"shown\":false},\"8\":{\"shown\":false,\"shownAsSubmenu\":false},\"4\":{\"shown\":false,\"shownAsSubmenu\":false},\"19\":{\"shown\":false,\"shownAsSubmenu\":true}}"
     },
     "menuCustomSpecVisibility" : {
 
@@ -275,7 +275,7 @@
       "int" : 2
     },
     "reticleColor" : {
-      "string" : "{\"green\":0.3,\"alpha\":0.5,\"red\":0.8,\"blue\":0.2}"
+      "string" : "{\"alpha\":0.5,\"blue\":0.2,\"red\":0.8,\"green\":0.3}"
     },
     "reticleDisplayMinDist" : {
       "float" : 0
@@ -529,11 +529,11 @@
       "keyCode" : 126,
       "modifierFlags" : 917504
     },
-    "nextDisplay" : {
+    "nextDisplayRatio" : {
       "keyCode" : 124,
       "modifierFlags" : 1835008
     },
-    "previousDisplay" : {
+    "prevDisplayRatio" : {
       "keyCode" : 123,
       "modifierFlags" : 1835008
     },
@@ -562,6 +562,6 @@
       "modifierFlags" : 786432
     }
   },
-  "timestamp" : 753098957.026904,
-  "version" : "176"
+  "timestamp" : 753184188.34239,
+  "version" : "178"
 }
