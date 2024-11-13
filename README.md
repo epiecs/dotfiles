@@ -140,7 +140,8 @@ A collection of my dotfiles
     - Login to vscode and sync
     - Disable private mac on wifi where needed
     - Transfer files and projects
-    
+
+    - Disable airplay receiver (helps with bluetooth interference)
 
     - Set correct login items
     - Aldente appearance > other -> do not show dock icon
