@@ -35,6 +35,7 @@ brew "wget"
 # casks
 cask "aldente"
 cask "alt-tab"
+cask "apptivate"
 cask "basictex"
 cask "bruno"
 cask "discord"
