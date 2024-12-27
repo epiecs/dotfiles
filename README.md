@@ -65,7 +65,7 @@ A collection of my dotfiles
 
     ```
     cd ~/dotfiles
-    stow bash bat git karabiner linearmouse nano nvim tmux wezterm
+    stow bash bat ghostty git karabiner linearmouse nano nvim tmux wezterm
     ```
 
 - Set the correct bash version as your default shell

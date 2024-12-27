@@ -40,6 +40,7 @@ cask "basictex"
 cask "bruno"
 cask "discord"
 # cask "fliqlo" # clock screensaver
+cask "ghostty"
 cask "karabiner-elements"
 cask "jordanbaird-ice"
 cask "linearmouse"
