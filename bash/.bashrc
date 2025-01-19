@@ -78,6 +78,11 @@ alias newvenv='python3 -m venv .venv'
 alias tothelab="cd ${LABDIR}"
 alias syncnotes="git -C ${NOTESDIR} pull; git -C ${NOTESDIR} add .; git -C ${NOTESDIR} status; git -C ${NOTESDIR} commit -am 'sync'; git -C ${NOTESDIR} push"
 
+function dockerbash() {
+    local shell="${2:-/bin/bash}"
+    docker exec -it $(docker ps | grep $1 | cut -c 1-4) $shell
+}
+
 # # Aliases only if the tool is installed
 # if [command -v bat 2>&1 >/dev/null]; then
 #     alias cat="bat -pp"
