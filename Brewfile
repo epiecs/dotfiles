@@ -40,6 +40,7 @@ cask "apptivate"
 cask "basictex"
 cask "bruno"
 cask "discord"
+cask "drawio"
 # cask "fliqlo" # clock screensaver
 cask "ghostty"
 cask "karabiner-elements"
