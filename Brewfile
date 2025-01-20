@@ -31,6 +31,7 @@ brew "stow"
 brew "telnet"
 brew "tmux"
 brew "tree"
+brew "uv"
 brew "wget"
 
 # casks
