@@ -7,6 +7,9 @@ copy-on-select = true
 
 font-thicken = true
 font-family = 0xProto Nerd Font Mono
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 
 minimum-contrast = 3
 
