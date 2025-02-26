@@ -115,6 +115,7 @@ export LC_ALL=en_US.UTF-8
 # Disable mac zsh notification
 export BASH_SILENCE_DEPRECATION_WARNING=1,
 
+
 # 
 # Prompt
 # 
@@ -141,6 +142,21 @@ get_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
+# allow scripts to read the current terminal window size
+shopt -s checkwinsize
+draw_line()
+{
+    # function used to draw a line between commands
+    local COLUMNS="$COLUMNS"
+    local TIME=$(date "+%T")
+    while ((COLUMNS > 10)); do
+        printf '\u2500'
+#       printf -- "- "
+       ((COLUMNS-=1))
+    done
+    printf "[${TIME}]"
+}
+
 # Prompt vars
 PROMPT_LINECOLOR="${WHITE}"
 PROMPT_BRACKETCOLOR="${WHITE}"
@@ -153,7 +169,8 @@ PROMPT_DIVIDER="\342\224\200"
 PROMPT_DIRTRIM=2
 
 build_prompt() {
-    PS1="${RESET}"
+    PS1="\n${RESET}"
+    PS1+="$(draw_line)\n"
     PS1+="${PROMPT_LINECOLOR}${PROMPT_START}"
     PS1+="${PROMPT_BRACKETCOLOR}[${WHITE}\u${YELLOW}@${BLUE}\h${PROMPT_BRACKETCOLOR}]"
     # PS1+="${PROMPT_LINECOLOR}${PROMPT_DIVIDER}"
