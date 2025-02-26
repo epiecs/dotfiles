@@ -15,4 +15,6 @@ minimum-contrast = 3
 
 window-new-tab-position = end
 
+split-divider-color = #7dcfff
+
 theme = tokyonight-storm
