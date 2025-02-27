@@ -4,15 +4,30 @@
 [core]
 	editor = nano
 	excludesfile = ~/.gitignore
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
 [init]
 	defaultBranch = master
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [push]
 	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
 [alias]
-	c = commit
-	ca = commit -a
-	cm = commit -m
-	cam = commit -am
 	d = diff
 	dc = diff --cached
 	; log
