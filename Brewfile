@@ -46,6 +46,7 @@ cask "bruno"
 cask "discord"
 cask "drawio"
 # cask "fliqlo" # clock screensaver
+cask "ghidra"
 cask "ghostty"
 cask "karabiner-elements"
 cask "jordanbaird-ice"
@@ -62,6 +63,9 @@ cask "visual-studio-code"
 cask "wezterm"
 cask "wireshark"
 cask "zotero"
+
+# java libraries
+cask "temurin"
 
 # fonts
 brew "cascadia"
