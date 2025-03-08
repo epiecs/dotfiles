@@ -15,6 +15,15 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Use this tool to get the plist values: https://github.com/8ta4/plist
+# Plistbuddy is a built in apple command: https://medium.com/@marksiu/what-is-plistbuddy-76cb4f0c262d
+
+# Set keyboard shortcut to hide/show sidebar in safari to CMD-Shift-M since CMD-Shift-L is hardcoded in bitwarden
+/usr/libexec/PlistBuddy -c "Delete ':NSUserKeyEquivalents:Show Sidebar'" "$HOME/Library/Preferences/com.apple.Safari.plist"
+/usr/libexec/PlistBuddy -c "Delete ':NSUserKeyEquivalents:Hide Sidebar'" "$HOME/Library/Preferences/com.apple.Safari.plist"
+/usr/libexec/PlistBuddy -c "Add ':NSUserKeyEquivalents:Hide Sidebar' string '@$m'" "$HOME/Library/Preferences/com.apple.Safari.plist"
+/usr/libexec/PlistBuddy -c "Add ':NSUserKeyEquivalents:Show Sidebar' string '@$m'" "$HOME/Library/Preferences/com.apple.Safari.plist"
+
 # Cleanup
 defaults write com.apple.dock persistent-apps -array                    # remove all default apps from the dock
 
