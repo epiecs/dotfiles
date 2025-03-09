@@ -46,7 +46,6 @@ cask "bruno"
 cask "discord"
 cask "drawio"
 # cask "fliqlo" # clock screensaver
-cask "ghidra"
 cask "ghostty"
 cask "karabiner-elements"
 cask "jordanbaird-ice"
@@ -61,10 +60,14 @@ cask "sequel-pro"
 cask "spotify"
 cask "visual-studio-code"
 cask "wezterm"
-cask "wireshark"
 cask "zotero"
 
-# java libraries
+# Security tools
+cask "saleae-logic"
+cask "wireshark"
+cask "ghidra"
+
+# java libraries - needed for ghidra
 cask "temurin"
 
 # fonts
