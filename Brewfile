@@ -60,10 +60,12 @@ cask "rustdesk"
 cask "sequel-pro"
 cask "spotify"
 cask "visual-studio-code"
+cask "vlc"
 cask "wezterm"
 cask "zotero"
 
 # Security tools
+cask "binwalk"
 cask "saleae-logic"
 cask "wireshark"
 cask "ghidra"
