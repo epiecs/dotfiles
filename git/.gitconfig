@@ -36,3 +36,5 @@
 	r = log --tags --no-walk --pretty=format:'%Cred%h%Creset %Cgreen(%cs) %C(bold blue)<%an>%Creset - %s%C(yellow)%d%Creset' --abbrev-commit
 [pull]
 	rebase = true
+[rebase]
+    autoStash = true
