@@ -17,4 +17,5 @@ window-new-tab-position = end
 
 split-divider-color = #7dcfff
 
-theme = tokyonight-storm
+#theme = tokyonight-storm
+theme = tokyonight

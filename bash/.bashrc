@@ -2,7 +2,8 @@
 # Variables
 # 
 
-GNS3_SERVER="gns3-gregory.rijkelhq.local"
+#GNS3_SERVER="gns3-gregory.rijkelhq.local"
+GNS3_SERVER="10.10.50.50"
 NOTESDIR="/Users/gregory/Desktop/Projects/obsidian-notes"
 LABDIR="/Users/gregory/Desktop/Projects"
 SERIAL_ADAPTER="/dev/tty.usbserial-AH06CZLR"
@@ -82,6 +83,10 @@ alias syncnotes="git -C ${NOTESDIR} pull; git -C ${NOTESDIR} add .; git -C ${NOT
 function dockerbash() {
     local shell="${2:-/bin/bash}"
     docker exec -it $(docker ps | grep $1 | cut -c 1-4) $shell
+}
+
+function getcert() {
+    echo | openssl s_client -showcerts -servername smtp.office365.com -connect smtp.office365.com:995 2>/dev/null | openssl x509 -inform pem -noout -text
 }
 
 # # Aliases only if the tool is installed

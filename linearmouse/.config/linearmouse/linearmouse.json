@@ -1,28 +1,17 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
   "schemes" : [
     {
-      "if" : {
-        "device" : {
-          "productID" : "0xa6",
-          "vendorID" : "0x1532",
-          "productName" : "Razer Viper V2 Pro",
-          "serialNumber" : "000000000000",
-          "category" : "mouse"
-        }
+      "pointer" : {
+        "speed" : 0.7,
+        "acceleration" : 0
       },
       "scrolling" : {
         "speed" : {
-          "vertical" : 19.84
-        },
-        "distance" : {
-          "vertical" : "auto"
+          "vertical" : 3,
+          "horizontal" : 0
         },
         "reverse" : {
           "vertical" : true
-        },
-        "acceleration" : {
-          "vertical" : 0.5
         },
         "modifiers" : {
           "vertical" : {
@@ -30,42 +19,72 @@
               "type" : "alterOrientation"
             }
           }
+        },
+        "acceleration" : 1,
+        "distance" : {
+          "vertical" : "auto",
+          "horizontal" : "36px"
         }
-      },
-      "pointer" : {
-        "acceleration" : 0,
-        "speed" : 0.7
       },
       "buttons" : {
         "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0xa6",
+          "vendorID" : "0x1532",
+          "productName" : "Razer Viper V2 Pro",
+          "category" : "mouse",
+          "serialNumber" : "000000000000"
+        }
       }
     },
     {
       "scrolling" : {
-        "acceleration" : {
-          "vertical" : 0.2
+        "distance" : {
+          "vertical" : "39.5px",
+          "horizontal" : "128px"
+        },
+        "acceleration" : 1,
+        "speed" : 0
+      },
+      "if" : {
+        "app" : "com.apple.Safari",
+        "device" : {
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "vendorID" : "0x1532",
+          "category" : "mouse",
+          "serialNumber" : "000000000000"
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 0.5
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
         },
         "speed" : {
           "vertical" : 15
         },
-        "reverse" : {
-          "vertical" : true
+        "acceleration" : {
+          "vertical" : 0.2
         }
-      },
-      "if" : {
-        "device" : {
-          "vendorID" : "0x46d",
-          "productName" : "MX Master 2S",
-          "serialNumber" : "6B7E34AD8363B06C",
-          "productID" : "0xb019",
-          "category" : "mouse"
-        }
-      },
-      "pointer" : {
-        "acceleration" : 0.5
       },
       "buttons" : {
         "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0xb019",
+          "productName" : "MX Master 2S",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
       }
     },
     {
@@ -76,85 +95,76 @@
         "display" : "U34G3XM",
         "device" : {
           "productID" : "0xb019",
-          "serialNumber" : "6B7E34AD8363B06C",
+          "vendorID" : "0x46d",
           "productName" : "MX Master 2S",
           "category" : "mouse",
-          "vendorID" : "0x46d"
+          "serialNumber" : "6B7E34AD8363B06C"
         }
       }
     },
     {
+      "pointer" : {
+        "speed" : 0.15
+      },
       "if" : {
         "display" : "PL2792QN",
         "device" : {
           "vendorID" : "0x46d",
-          "productName" : "MX Master 2S",
-          "serialNumber" : "6B7E34AD8363B06C",
           "productID" : "0xb019",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "productName" : "MX Master 2S",
           "category" : "mouse"
         }
-      },
-      "pointer" : {
-        "speed" : 0.15
       }
     },
     {
-      "buttons" : {
-        "universalBackForward" : true
-      },
-      "scrolling" : {
-        "reverse" : {
-          "vertical" : true
-        },
-        "acceleration" : {
-          "vertical" : 1
-        }
-      },
       "pointer" : {
         "acceleration" : 0,
         "speed" : 0.7
       },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      },
       "if" : {
         "device" : {
-          "productName" : "Razer Viper V2 Pro",
-          "vendorID" : "0x1532",
           "productID" : "0xa5",
+          "category" : "mouse",
+          "vendorID" : "0x1532",
           "serialNumber" : "000000000000",
-          "category" : "mouse"
+          "productName" : "Razer Viper V2 Pro"
         }
       }
     },
     {
-      "if" : {
-        "device" : {
-          "productName" : "Apple Internal Keyboard \/ Trackpad",
-          "vendorID" : "0x0",
-          "category" : "trackpad",
-          "productID" : "0x0"
-        }
-      },
       "scrolling" : {
-        "distance" : {
-          "vertical" : "auto"
-        },
         "speed" : {
           "vertical" : 0
         },
         "acceleration" : {
           "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : "auto"
+        }
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0x0",
+          "category" : "trackpad",
+          "vendorID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad"
         }
       }
     },
     {
-      "if" : {
-        "device" : {
-          "serialNumber" : "000000000000000",
-          "productID" : "0x60ef",
-          "vendorID" : "0x17ef",
-          "productName" : "Lenovo Bluetooth Mouse",
-          "category" : "mouse"
-        }
-      },
       "scrolling" : {
         "reverse" : {
           "vertical" : true
@@ -162,7 +172,17 @@
         "acceleration" : {
           "vertical" : 1
         }
+      },
+      "if" : {
+        "device" : {
+          "serialNumber" : "000000000000000",
+          "productID" : "0x60ef",
+          "category" : "mouse",
+          "productName" : "Lenovo Bluetooth Mouse",
+          "vendorID" : "0x17ef"
+        }
       }
     }
-  ]
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
 }
