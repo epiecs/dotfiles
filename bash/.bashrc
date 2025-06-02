@@ -115,8 +115,10 @@ export PATH="$PATH:~/.local/bin"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 # ansible cant use cows
 export ANSIBLE_NOCOWS=1
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+#export LC_CTYPE=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.utf8
+export LC_ALL=en_US.utf8
 # Disable mac zsh notification
 export BASH_SILENCE_DEPRECATION_WARNING=1,
 

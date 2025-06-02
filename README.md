@@ -152,6 +152,8 @@ A collection of my dotfiles
         - add needed folders to sidebar
     - notifications
         - disable tips
+    - disable mission control shortcuts to free up ctrl for tmux
+        - https://superuser.com/a/1723080
 
 
 ## Handy functions
