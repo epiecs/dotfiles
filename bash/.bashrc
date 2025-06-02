@@ -41,12 +41,16 @@ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 # Aliases can use sudo
 alias sudo="sudo "
 
-# Mac specific, map clip to pbcopy
+# Mac specific overrides
 if [ "$(uname)" == "Darwin" ]; then
     alias clip="pbcopy"
     alias sed="gsed"
+    export LC_CTYPE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
 else
     alias clip="xclip"
+    export LC_CTYPE=en_US.utf8
+    export LC_ALL=en_US.utf8
 fi
 
 # Mac specific commands
@@ -115,10 +119,6 @@ export PATH="$PATH:~/.local/bin"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 # ansible cant use cows
 export ANSIBLE_NOCOWS=1
-#export LC_CTYPE=en_US.UTF-8
-#export LC_ALL=en_US.UTF-8
-export LC_CTYPE=en_US.utf8
-export LC_ALL=en_US.utf8
 # Disable mac zsh notification
 export BASH_SILENCE_DEPRECATION_WARNING=1,
 
