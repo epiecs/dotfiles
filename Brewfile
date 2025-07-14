@@ -39,6 +39,7 @@ brew "uv"
 brew "wget"
 
 # casks
+cask "7zip"
 cask "aldente"
 cask "alt-tab"
 cask "apptivate"
