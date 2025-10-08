@@ -1,18 +1,26 @@
 {
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
   "schemes" : [
     {
+      "buttons" : {
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        }
+      },
       "pointer" : {
-        "speed" : 0.7,
-        "acceleration" : 0
+        "acceleration" : 0,
+        "speed" : 0.7
       },
       "scrolling" : {
-        "speed" : {
-          "vertical" : 3,
-          "horizontal" : 0
-        },
-        "reverse" : {
-          "vertical" : true
-        },
+        "acceleration" : 1,
+        "distance" : "36px",
         "modifiers" : {
           "vertical" : {
             "shift" : {
@@ -20,104 +28,137 @@
             }
           }
         },
-        "acceleration" : 1,
-        "distance" : {
-          "vertical" : "auto",
-          "horizontal" : "36px"
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : 0
+      }
+    },
+    {
+      "if" : {
+        "app" : "com.apple.Safari",
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
         }
       },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : {
+          "horizontal" : "128px",
+          "vertical" : "39.5px"
+        },
+        "speed" : 0
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        },
+        "display" : "ARZOPA"
+      },
+      "scrolling" : {
+        "distance" : {
+          "vertical" : "90.3px"
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        },
+        "display" : "C49HG9x"
+      },
+      "scrolling" : {
+        "distance" : {
+          "vertical" : "51.1px"
+        }
+      }
+    },
+    {
       "buttons" : {
         "universalBackForward" : true
       },
       "if" : {
         "device" : {
-          "productID" : "0xa6",
-          "vendorID" : "0x1532",
-          "productName" : "Razer Viper V2 Pro",
           "category" : "mouse",
-          "serialNumber" : "000000000000"
+          "productID" : "0xb019",
+          "productName" : "MX Master 2S",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "vendorID" : "0x46d"
         }
-      }
-    },
-    {
-      "scrolling" : {
-        "distance" : {
-          "vertical" : "39.5px",
-          "horizontal" : "128px"
-        },
-        "acceleration" : 1,
-        "speed" : 0
       },
-      "if" : {
-        "app" : "com.apple.Safari",
-        "device" : {
-          "productID" : "0xa6",
-          "productName" : "Razer Viper V2 Pro",
-          "vendorID" : "0x1532",
-          "category" : "mouse",
-          "serialNumber" : "000000000000"
-        }
-      }
-    },
-    {
       "pointer" : {
         "acceleration" : 0.5
       },
       "scrolling" : {
+        "acceleration" : {
+          "vertical" : 0.2
+        },
         "reverse" : {
           "vertical" : true
         },
         "speed" : {
           "vertical" : 15
-        },
-        "acceleration" : {
-          "vertical" : 0.2
         }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb019",
+          "productName" : "MX Master 2S",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "vendorID" : "0x46d"
+        },
+        "display" : "U34G3XM"
       },
+      "pointer" : {
+        "speed" : 0.18
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb019",
+          "productName" : "MX Master 2S",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "vendorID" : "0x46d"
+        },
+        "display" : "PL2792QN"
+      },
+      "pointer" : {
+        "speed" : 0.15
+      }
+    },
+    {
       "buttons" : {
         "universalBackForward" : true
       },
       "if" : {
         "device" : {
-          "productID" : "0xb019",
-          "productName" : "MX Master 2S",
-          "serialNumber" : "6B7E34AD8363B06C",
           "category" : "mouse",
-          "vendorID" : "0x46d"
+          "productID" : "0xa5",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
         }
-      }
-    },
-    {
-      "pointer" : {
-        "speed" : 0.18
       },
-      "if" : {
-        "display" : "U34G3XM",
-        "device" : {
-          "productID" : "0xb019",
-          "vendorID" : "0x46d",
-          "productName" : "MX Master 2S",
-          "category" : "mouse",
-          "serialNumber" : "6B7E34AD8363B06C"
-        }
-      }
-    },
-    {
-      "pointer" : {
-        "speed" : 0.15
-      },
-      "if" : {
-        "display" : "PL2792QN",
-        "device" : {
-          "vendorID" : "0x46d",
-          "productID" : "0xb019",
-          "serialNumber" : "6B7E34AD8363B06C",
-          "productName" : "MX Master 2S",
-          "category" : "mouse"
-        }
-      }
-    },
-    {
       "pointer" : {
         "acceleration" : 0,
         "speed" : 0.7
@@ -129,60 +170,47 @@
         "reverse" : {
           "vertical" : true
         }
-      },
-      "buttons" : {
-        "universalBackForward" : true
-      },
-      "if" : {
-        "device" : {
-          "productID" : "0xa5",
-          "category" : "mouse",
-          "vendorID" : "0x1532",
-          "serialNumber" : "000000000000",
-          "productName" : "Razer Viper V2 Pro"
-        }
       }
     },
     {
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
+        }
+      },
       "scrolling" : {
-        "speed" : {
-          "vertical" : 0
-        },
         "acceleration" : {
           "vertical" : 1
         },
         "distance" : {
           "vertical" : "auto"
-        }
-      },
-      "if" : {
-        "device" : {
-          "productID" : "0x0",
-          "category" : "trackpad",
-          "vendorID" : "0x0",
-          "productName" : "Apple Internal Keyboard \/ Trackpad"
+        },
+        "speed" : {
+          "vertical" : 0
         }
       }
     },
     {
-      "scrolling" : {
-        "reverse" : {
-          "vertical" : true
-        },
-        "acceleration" : {
-          "vertical" : 1
-        }
-      },
       "if" : {
         "device" : {
-          "serialNumber" : "000000000000000",
-          "productID" : "0x60ef",
           "category" : "mouse",
+          "productID" : "0x60ef",
           "productName" : "Lenovo Bluetooth Mouse",
+          "serialNumber" : "000000000000000",
           "vendorID" : "0x17ef"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : true
         }
       }
     }
-  ],
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+  ]
 }
