@@ -89,6 +89,26 @@
       }
     },
     {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        },
+        "display" : "Odyssey G95NC"
+      },
+      "pointer" : {
+        "speed" : 1
+      },
+      "scrolling" : {
+        "distance" : {
+          "vertical" : "128px"
+        }
+      }
+    },
+    {
       "buttons" : {
         "universalBackForward" : true
       },
