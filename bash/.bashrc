@@ -149,19 +149,27 @@ get_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
-# allow scripts to read the current terminal window size
-shopt -s checkwinsize
+draw_prompt_end()
+{
+    local TIME=$(date "+%T")
+    printf "[${TIME}]"
+}
+
 draw_line()
 {
     # function used to draw a line between commands
     local COLUMNS="$COLUMNS"
-    local TIME=$(date "+%T")
+    local LINE=""
+    
     while ((COLUMNS > 10)); do
-        printf '\u2500'
-#       printf -- "- "
-       ((COLUMNS-=1))
+        LINE+=$'\u2500'
+        # LINE+="-"
+        ((COLUMNS-=1))
     done
-    printf "[${TIME}]"
+
+    # print line for the entire length and then use a carriage return to go back to the beginning of the line
+    # Our prompt that we then generate overwrites this line where needed so that we always have a flexible length
+    printf '%s\r' "${LINE}$(draw_prompt_end)"
 }
 
 # Prompt vars
@@ -176,8 +184,9 @@ PROMPT_DIVIDER="\342\224\200"
 PROMPT_DIRTRIM=2
 
 build_prompt() {
-    PS1="\n${RESET}"
-    PS1+="$(draw_line)\n"
+    PS1="$(draw_line)"
+
+    PS1+="${RESET}"
     PS1+="${PROMPT_LINECOLOR}${PROMPT_START}"
     PS1+="${PROMPT_BRACKETCOLOR}[${WHITE}\u${YELLOW}@${BLUE}\h${PROMPT_BRACKETCOLOR}]"
     # PS1+="${PROMPT_LINECOLOR}${PROMPT_DIVIDER}"
@@ -187,13 +196,10 @@ build_prompt() {
     PS1+="\$(if [ \$(get_git_branch) ]; then echo '${PROMPT_LINECOLOR}${PROMPT_DIVIDER}${PROMPT_BRACKETCOLOR}[${YELLOW}'\$(get_git_branch)'${PROMPT_BRACKETCOLOR}]'; fi)"
     PS1+="\$(if [ \$(get_virtualenv) ]; then echo '${PROMPT_LINECOLOR}${PROMPT_DIVIDER}${PROMPT_BRACKETCOLOR}[${GREEN}'\$(get_virtualenv)'${PROMPT_BRACKETCOLOR}]'; fi)"
     PS1+="\n"
+
     PS1+="${PROMPT_LINECOLOR}${PROMPT_START_NEWLINE}"
     PS1+="${WHITE}>${NORMAL} "
     
 }
-# export PS1="${RESET}${RED}${PROMPT_START}[${WHITE}\u${YELLOW}@${BLUE}\h${RED}]${PROMPT_DIVIDER}[${BLUE}\A${RED}]${PROMPT_DIVIDER}[${GREEN}\w${RED}]\$(if [ \$(get_git_branch) ]; then echo '${PROMPT_DIVIDER}[${YELLOW}'\$(get_git_branch)'${RED}]'; fi)\n${RED}${PROMPT_START_NEWLINE}\$(if [ \$(get_virtualenv) ]; then echo '${GREEN} (venv:'\$(get_virtualenv)')'; fi) ${YELLOW}\$${NORMAL} "
-# export PS1="${RESET}${PROMPT_LINECOLOR}${PROMPT_START}${PROMPT_USER}${PROMPT_DIVIDER}${PROMPT_DIRECTORY}${PROMPT_GIT}\n${PROMPT_LINECOLOR}${PROMPT_START_NEWLINE}${PROMPT_VENV} ${YELLOW}\$${NORMAL} "
-# export PS1="${PROMPT_USER}${PROMPT_DIVIDER}${PROMPT_DIRECTORY}${PROMPT_GIT}\n${PROMPT_LINECOLOR}${PROMPT_START_NEWLINE}${PROMPT_VENV} ${YELLOW}\$${NORMAL} "
-# export PS1=$(build_prompt)
 
 PROMPT_COMMAND=build_prompt
