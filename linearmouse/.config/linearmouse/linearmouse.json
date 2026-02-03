@@ -109,6 +109,56 @@
       }
     },
     {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        },
+        "display" : "Virtual 10240:2880"
+      },
+      "scrolling" : {
+        "distance" : {
+          "vertical" : "78px"
+        },
+        "modifiers" : {
+          "vertical" : {
+            "control" : {
+              "type" : "zoom"
+            },
+            "shift" : {
+              "type" : "alterOrientation"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        },
+        "display" : "Virtual - Odyssey G95NC"
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 4
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      }
+    },
+    {
       "buttons" : {
         "universalBackForward" : true
       },
@@ -164,6 +214,27 @@
       },
       "pointer" : {
         "speed" : 0.15
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb019",
+          "productName" : "MX Master 2S",
+          "serialNumber" : "6B7E34AD8363B06C",
+          "vendorID" : "0x46d"
+        },
+        "display" : "Virtual 10240:2880"
+      },
+      "scrolling" : {
+        "modifiers" : {
+          "vertical" : {
+            "control" : {
+              "type" : "zoom"
+            }
+          }
+        }
       }
     },
     {

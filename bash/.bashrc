@@ -67,6 +67,9 @@ alias tree="tree -pug"
 alias dd='dd status=progress'
 alias ffs='sudo !!'
 
+# Handy aliases
+alias newpass="pwgen -Bcn1 12"
+
 # Tmux aliases
 alias tat='tmux attach'
 alias tls='tmux ls'
