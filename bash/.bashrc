@@ -68,7 +68,7 @@ alias dd='dd status=progress'
 alias ffs='sudo !!'
 
 # Handy aliases
-alias newpass="pwgen -Bcn1 12"
+alias newpass="pwgen -Bcnsv 12 1"
 
 # Tmux aliases
 alias tat='tmux attach'
