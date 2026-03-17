@@ -125,7 +125,7 @@ A collection of my dotfiles
 
 - Manual todo
 
-    - Import rectangle config
+    - Import rectangle config from `app-settings`
     - Import wireguard tunnels
     - Login to obsidian
         - The vault can be opened from your projects folder
