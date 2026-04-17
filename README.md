@@ -45,8 +45,8 @@ A collection of my dotfiles
     # Wireguard
     mas install 1451685025
 
-    # Microsoft remote desktop
-    mas install 1295203466
+    # Rcmd
+    mas install 1596283165
     ```
 
 - Reboot
