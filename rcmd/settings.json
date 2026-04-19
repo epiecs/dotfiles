@@ -1,0 +1,149 @@
+{
+  "windowOnlySwitchOSDDelay" : 0,
+  "specialKey" : "equal",
+  "allowWindowSwitcher" : false,
+  "ignoredKeys" : [
+
+  ],
+  "appSortReverse" : false,
+  "hideStaticSettings" : false,
+  "enableCycleHotkey" : false,
+  "enableHideOnFocusHotkey" : false,
+  "windowSwitcherDimFocused" : false,
+  "appSwitcherFeatures" : 38,
+  "switcherScreenPlacement" : 1,
+  "minimizeOnlyFocusedWindowOnMinus" : true,
+  "enableStaticCycle" : true,
+  "windowSwitchOSDDelay" : 350,
+  "appSwitcherUseNumbersForWindows" : false,
+  "windowSwitcherAppearance" : "clean",
+  "keyTapThreshold" : 0.14,
+  "windowKeyPatterns" : [
+    {
+      "id" : "com.sublimetext.4",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.sublimetext.3",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.sublimetext.2",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.sublimetext.",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.visualstudio.code.oss",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.visualstudio.code",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.microsoft.VSCodiumInsiders",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.microsoft.VSCode",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.microsoft.VSCodeInsiders",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.microsoft.VSCod",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    },
+    {
+      "id" : "com.todesktop.",
+      "pattern" : ".* — [^\\w\\d]*(.)"
+    }
+  ],
+  "zeroAsLastFocusedWindow" : false,
+  "showWindowSwitcher" : true,
+  "showAppSwitcher" : true,
+  "appKeyAssignments" : [
+    {
+      "index" : 7,
+      "whenAlreadyFocusedAction" : 2,
+      "app" : {
+        "path" : "/Applications/Visual Studio Code.app",
+        "switchCount" : 0,
+        "useCount" : 430,
+        "identifier" : "com.microsoft.VSCode:70848",
+        "originalName" : "Visual Studio Code"
+      },
+      "key" : "c"
+    },
+    {
+      "index" : 0,
+      "whenAlreadyFocusedAction" : 2,
+      "app" : {
+        "path" : "/System/Library/CoreServices/Finder.app",
+        "useCount" : 122,
+        "identifier" : "com.apple.finder:715",
+        "switchCount" : 0,
+        "originalName" : "Finder"
+      },
+      "key" : "f"
+    },
+    {
+      "index" : 0,
+      "whenAlreadyFocusedAction" : 2,
+      "app" : {
+        "path" : "/Applications/Ghostty.app",
+        "identifier" : "com.mitchellh.ghostty:696",
+        "useCount" : 2947,
+        "switchCount" : 0,
+        "originalName" : "Ghostty"
+      },
+      "key" : "t"
+    },
+    {
+      "index" : 0,
+      "whenAlreadyFocusedAction" : 2,
+      "app" : {
+        "useCount" : 3666,
+        "originalName" : "Safari",
+        "switchCount" : 0,
+        "path" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+        "identifier" : "com.apple.Safari:92574"
+      },
+      "key" : "s"
+    }
+  ],
+  "hideOnlyFocusedAppOnMinus" : false,
+  "windowSwitcherFeatures" : 57,
+  "ignoredApps" : [
+    "com.apple.reminders",
+    "com.jgraph.drawio.desktop",
+    "org.zotero.zotero",
+    "com.apple.Preview",
+    "com.microsoft.Excel",
+    "com.apple.Stickies",
+    "com.apple.ActivityMonitor"
+  ],
+  "minimizeKey" : "minus",
+  "windowTriggerKeys" : [
+    5
+  ],
+  "whenAlreadyFocusedAction" : 2,
+  "alwaysHideOthers" : false,
+  "notificationsPermissionsGranted" : false,
+  "enableAssignHotkey" : false,
+  "activateAllWindows" : true,
+  "triggerKeys" : [
+    4
+  ],
+  "appSort" : "name",
+  "focusOnKeyUp" : false,
+  "fnWindowSwitching" : false,
+  "windowKeyAssignments" : [
+
+  ]
+}
