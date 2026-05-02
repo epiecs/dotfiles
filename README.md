@@ -56,7 +56,7 @@ A collection of my dotfiles
     - AltTab
     - Amphetamine
     - Discord
-    - Ice
+    - Thaw + also enable start at login
     - Karabiner-Elements
     - Powershell
     - Rectangle Pro
@@ -65,7 +65,7 @@ A collection of my dotfiles
 
     ```
     cd ~/dotfiles
-    stow bash bat ghostty git karabiner linearmouse nano nvim tmux wezterm
+    stow bash bat ghostty git karabiner linearmouse nano nvim tmux wezterm zed
     ```
 
 - Set the correct bash version as your default shell
@@ -172,7 +172,7 @@ Export current settings:
 
 ```
 defaults export com.lwouis.alt-tab-macos ~/dotfiles/app-settings/alt-tab.plist
-defaults export com.jordanbaird.Ice.plist ~/dotfiles/app-settings/ice.plist
+# defaults export com.jordanbaird.Ice.plist ~/dotfiles/app-settings/ice.plist
 ```
 
 ### App store list of apps
