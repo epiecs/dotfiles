@@ -1,0 +1,147 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "toolbar": {
+    "code_actions": false,
+    "selections_menu": false,
+    "breadcrumbs": false,
+    "quick_actions": false,
+  },
+  "format_on_save": "off",
+  "tab_size": 4,
+  "hard_tabs": false,
+  "auto_install_extensions": {
+    "ansible": true,
+    "basher": true,
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "cobalt2": true,
+    "comment": true,
+    "csv": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "github-theme": true,
+    "html": true,
+    "html-jinja": true,
+    "http": true,
+    "ini": true,
+    "jinja2": true,
+    "log": true,
+    "lua": true,
+    "make": true,
+    "nginx": true,
+    "nord": true,
+    "php": true,
+    "powershell": true,
+    "rainbow-csv": true,
+    "seti-icons": true,
+    "sql": true,
+    "synthwave84": true,
+    "tmux": true,
+    "tokyo-night": true,
+    "toml": true,
+    "xml": true,
+  },
+  "buffer_line_height": "comfortable",
+  "proxy": "",
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "tabs": {
+    "file_icons": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_status_icon": true,
+    "show_onboarding_banner": false,
+    "show_sign_in": false,
+  },
+  "gutter": {
+    "min_line_number_digits": 2,
+    "folds": false,
+  },
+  "cli_default_open_behavior": "new_window",
+  "terminal": {
+    "font_size": 14.0,
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
+  },
+  "project_panel": {
+    "hide_root": true,
+    "git_status_indicator": false,
+    "indent_size": 20.0,
+    "git_status": true,
+    "entry_spacing": "standard",
+    "hide_gitignore": false,
+    "default_width": 250.0,
+    "dock": "left",
+    "auto_fold_dirs": false,
+  },
+  "sticky_scroll": {
+    "enabled": false,
+  },
+  "languages": {
+    "Python": {
+      "format_on_save": "off",
+    },
+  },
+  "minimap": {
+    "show": "never",
+    "max_width_columns": 80,
+  },
+  "selection_highlight": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "file_types": {
+    "Mermaid": ["*.mmd"],
+    "ini": ["*.conf"],
+    "dotenv": [".env*"],
+    "cpp": [
+      "optional",
+      "istream",
+      "ostream",
+      "system_error",
+      "array",
+      "functional",
+      "tuple",
+      "type_traits",
+      "utility",
+      "cmath",
+    ],
+    "log": ["*.log.*"],
+  },
+  "colorize_brackets": true,
+  "auto_indent_on_paste": false,
+  "show_whitespaces": "none",
+  "ensure_final_newline_on_save": true,
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "base_keymap": "Atom",
+  "icon_theme": "Catppuccin Latte",
+  "ui_font_size": 14,
+  "buffer_font_size": 14.0,
+  "ui_font_family": "0xProto Nerd Font Mono",
+  "ui_font_fallbacks": [".ZedMono", "Menlo", "Monaco", "Courier New"],
+  "buffer_font_family": "0xProto Nerd Font Mono",
+  "buffer_font_fallbacks": [".ZedMono", "Menlo", "Monaco", "Courier New"],
+  "theme": "Catppuccin Mocha",
+}

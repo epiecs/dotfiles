@@ -1,0 +1,110 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-s =": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "cmd-k right": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-s -": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "cmd-k down": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s up": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k cmd-up": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s down": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k cmd-down": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s left": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k cmd-left": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s right": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k cmd-right": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "bindings": {
+      "alt-a": "editor::AlignSelections"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-y": "editor::Redo"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "cmd-shift-z": "editor::Redo"
+    }
+  }
+]
