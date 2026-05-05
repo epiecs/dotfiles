@@ -22,16 +22,16 @@
   "tab_size": 4,
   "hard_tabs": false,
   "auto_install_extensions": {
+    // Utility
+    "comment": true,
+    "rainbow-csv": true,
+    // Languages
     "ansible": true,
     "basher": true,
-    "catppuccin": true,
-    "catppuccin-icons": true,
-    "cobalt2": true,
-    "comment": true,
     "csv": true,
     "docker-compose": true,
     "dockerfile": true,
-    "github-theme": true,
+    "env": true,
     "html": true,
     "html-jinja": true,
     "http": true,
@@ -41,17 +41,24 @@
     "lua": true,
     "make": true,
     "nginx": true,
-    "nord": true,
     "php": true,
     "powershell": true,
-    "rainbow-csv": true,
-    "seti-icons": true,
+    "ssh-config": true,
     "sql": true,
-    "synthwave84": true,
     "tmux": true,
-    "tokyo-night": true,
     "toml": true,
     "xml": true,
+    // Themes
+    "catppuccin": true,
+    "cobalt2": true,
+    "github-theme": true,
+    "nord": true,
+    "synthwave84": true,
+    "tokyo-night": true,
+    // Icons
+    "catppuccin-icons": true,
+    "charmed-icons": true,
+    "seti-icons": true,
   },
   "buffer_line_height": "comfortable",
   "proxy": "",
@@ -97,7 +104,15 @@
   },
   "languages": {
     "Python": {
-      "format_on_save": "off",
+      "format_on_save": "on",
+      "formatter": [
+        { "code_action": "source.organizeImports" },
+        "none"
+        // Disable none and enable both options below for auto formatting
+        // { "code_action": "source.fixAll.ruff" },
+        // "language_server"
+      ],
+      "language_servers": ["ruff"]
     },
   },
   "minimap": {
