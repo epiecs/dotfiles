@@ -89,6 +89,7 @@
     "metrics": false,
   },
   "project_panel": {
+    "hide_hidden": true,
     "hide_root": true,
     "git_status_indicator": false,
     "indent_size": 20.0,
