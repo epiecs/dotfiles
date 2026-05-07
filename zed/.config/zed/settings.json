@@ -159,5 +159,9 @@
   "ui_font_fallbacks": [".ZedMono", "Menlo", "Monaco", "Courier New"],
   "buffer_font_family": "0xProto Nerd Font Mono",
   "buffer_font_fallbacks": [".ZedMono", "Menlo", "Monaco", "Courier New"],
+  "buffer_font_features": {
+      "calt": false, // Disable contextual alternatives
+      "liga": false  // Disable ligatures
+  },
   "theme": "Catppuccin Mocha",
 }
