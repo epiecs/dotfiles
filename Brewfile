@@ -62,12 +62,14 @@ cask "rectangle-pro"
 cask "rustdesk"
 cask "sequel-pro"
 cask "spotify"
+cask "synology-drive"
 cask "thaw"
 cask "visual-studio-code"
 cask "vlc"
 cask "wezterm"
 cask "zed"
 cask "zotero"
+
 
 # Security tools
 cask "binwalk"

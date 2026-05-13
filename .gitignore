@@ -1,3 +1,6 @@
+# Unwanted files
+zed/.config/zed/prompts/*
+
 # General
 .DS_Store
 .AppleDouble
