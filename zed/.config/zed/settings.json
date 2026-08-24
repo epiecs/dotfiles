@@ -16,6 +16,39 @@
           "paths": [
             "/srv/orchestration"
           ]
+        },
+        {
+          "paths": [
+            "/srv/stacks"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "klbs.be",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/srv/stacks/klbstest-web/./"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "10.30.60.120",
+      "username": "gregory",
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "automation",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/srv/ansible"
+          ]
         }
       ]
     }
@@ -102,7 +135,7 @@
     "metrics": false,
   },
   "project_panel": {
-    "hide_hidden": true,
+    "hide_hidden": false,
     "hide_root": true,
     "git_status_indicator": false,
     "indent_size": 20.0,
