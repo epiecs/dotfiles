@@ -39,6 +39,7 @@ brew "tmux"
 brew "tree"
 brew "uv"
 brew "wget"
+brew "ykman"
 
 # casks
 cask "7zip"
