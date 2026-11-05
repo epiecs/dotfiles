@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.12.0",
   "schemes" : [
     {
       "buttons" : {
@@ -103,8 +103,19 @@
         "speed" : 1
       },
       "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
         "distance" : {
-          "vertical" : "128px"
+          "vertical" : "85.2px"
+        },
+        "smoothed" : {
+          "vertical" : {
+            "enabled" : false
+          }
+        },
+        "speed" : {
+          "vertical" : 0
         }
       }
     },
@@ -155,6 +166,23 @@
         },
         "speed" : {
           "vertical" : 0
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "serialNumber" : "000000000000",
+          "vendorID" : "0x1532"
+        },
+        "display" : "G9-57-5120"
+      },
+      "scrolling" : {
+        "distance" : {
+          "vertical" : "72.4px"
         }
       }
     },

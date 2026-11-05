@@ -57,7 +57,7 @@ cask "linearmouse"
 cask "macpacker"                            # better unarchiver tool
 cask "microsoft-edge"
 cask "obsidian"
-cask "postman"
+# cask "postman"                            # no longer used, check 14370 on GH
 cask "powershell"
 cask "rectangle-pro"
 cask "rustdesk"

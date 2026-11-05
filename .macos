@@ -34,8 +34,23 @@ defaults write com.apple.dock "autohide" -bool "true"
 defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "mru-spaces" -bool "false"                # don't auto sort spaces
 
+# Control settings
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3                # Allow tab key to use modals/popups/controls
+
 # Screenshot settings
 defaults write com.apple.screencapture "disable-shadow" -bool "true"
+mkdir -p ~/Downloads/_screenshots
+defaults write com.apple.screencapture location "~/Downloads/_screenshots"               # Set default screenshot folder
+defaults write com.apple.screencapture location-screenshot "~/Downloads/_screenshots"
+
+# Safari settings
+defaults write com.apple.Safari UniversalSearchEnabled -bool false          # Dont send search results to apple
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true        # Dont send search results to apple
+defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true # Keep extensions up to date
+
+    # Prevent safari from automatically opening safe downloads
+/usr/libexec/PlistBuddy -c "Add :AutoOpenSafeDownloads bool false" ~/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/PlistBuddy -c "Set :AutoOpenSafeDownloads false" ~/Library/Preferences/com.apple.Safari.plist
 
 # Finder settings
 defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"     # show all file extensions
@@ -50,6 +65,8 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
     # Expand print panel by default
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false # Save all files to disk by default instead of icloud
 
 # Menu bar Settings
 defaults write com.apple.menuextra.clock "DateFormat" -string "\"d MMM HH:mm\""
@@ -113,6 +130,9 @@ defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
     # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+    # Disable automatic spellcheck and correcting
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSContinuousSpellCheckingEnabled -bool false
 
 # Audio settings
 sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
@@ -190,3 +210,4 @@ killall Dock
 killall Finder
 killall NotificationCenter
 killall SystemUIServer
+killall cfprefsd
